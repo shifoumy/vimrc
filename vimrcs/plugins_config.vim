@@ -155,18 +155,25 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \   'javascript': ['jshint'],
-\   'python': ['flake8'],
+\   'python': ['pylint', 'autopep8'],
 \   'go': ['go', 'golint', 'errcheck']
 \}
 
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
 " Disabling highlighting
-let g:ale_set_highlights = 0
+let g:ale_set_highlights = 1
 
 " Only run linting when saving the file
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_enter = 1
+
+" Setup others option for others linter
+" Show part 7 from :help ale-options
+" every linter have option, show linter list at 7.4 and add options
+" e.g. python autopep8 linter documentation at : ':help ale-python-autopep8' cmd
+let g:ale_python_autopep8_executable ="autopep8"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
