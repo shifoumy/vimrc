@@ -70,6 +70,7 @@ let g:user_zen_mode='a'
 """"""""""""""""""""""""""""""
 " => snipMate (beside <TAB> support <CTRL-j>)
 """"""""""""""""""""""""""""""
+let g:snipMate = { 'snippet_version' : 1 }
 ino <C-j> <C-r>=snipMate#TriggerSnippet()<cr>
 snor <C-j> <esc>i<right><C-r>=snipMate#TriggerSnippet()<cr>
 
@@ -157,6 +158,15 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setup completion with ALE
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+"
+" You should not turn this setting on if you wish to use ALE as a completion
+" source for other completion plugins, like Deoplete.
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+
 let g:ale_linters = {
 \   'javascript': ['jshint'],
 \   'python': ['pylint'],
@@ -184,9 +194,21 @@ let g:ale_lint_on_enter = 1
 " e.g. python autopep8 linter documentation at : ':help ale-python-autopep8' cmd
 let g:ale_python_autopep8_executable ="autopep8"
 
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => hashivim/vim-terraform (Terraform vim plugin)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
