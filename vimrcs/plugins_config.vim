@@ -93,7 +93,7 @@ map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 autocmd BufWinEnter * silent NERDTreeMirror
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
@@ -212,3 +212,9 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> Jedi Vim 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" let g:jedi#popup_on_dot = 0
